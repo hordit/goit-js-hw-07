@@ -9,7 +9,7 @@ if ('loading' in HTMLImageElement.prototype) {
 const galleryContainer = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
-document.addEventListener('click', onGalleryContainerClick);
+galleryContainer.addEventListener('click', onGalleryContainerClick);
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 
