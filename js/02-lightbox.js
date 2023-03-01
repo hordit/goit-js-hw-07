@@ -48,12 +48,9 @@ function createGalleryMarkup(items) {
         .join('');
 }
 
-var lightbox = new SimpleLightbox('.gallery a', {
-    captions: true,
+const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
-    captionSelector: 'img',
-    captionType: 'attr',
-    captionPosition: 'bottom'
+    captionsData: 'alt',
 });
 
 console.log(galleryItems);
