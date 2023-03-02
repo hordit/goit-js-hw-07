@@ -14,6 +14,7 @@ galleryContainer.addEventListener('click', onGalleryContainerClick);
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 
 function addLazySizesScript() {
+    console.log('поддерживает ленивые загрузки');
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     lazyImages.forEach(img => {
         img.src = img.dataset.src;
@@ -21,6 +22,7 @@ function addLazySizesScript() {
 }
 
 function addScAttrToLazyImages() {
+    console.log('не поддерживает ленивые загрузки');
     const script = document.createElement('script');
     script.src =
         'https://cdnis.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
@@ -42,6 +44,7 @@ function createGalleryMarkup(items) {
          src="${preview}"
          data-source="${original}"
          alt="${description}"
+         loading="lazy"
          />
     </a>
     </div>
